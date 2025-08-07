@@ -1,32 +1,31 @@
-A toolkit for mining, parsing, and modeling revision data from Wikipedia and other wiki platforms, using both Python and R.
-The code in this repository was originally developed to support the data collection and analyses presented in the paper:
-**Zhang, X. (2025). Decoding revision mechanisms in Wikipedia: Collaboration, moderation, and collectivities. *New Media & Society*. [https://doi.org/10.1177/14614448251336418](https://doi.org/10.1177/14614448251336418)**
+A comprehensive toolkit for analyzing content patterns, community interactions, network structure, and diffusion dynamics in social media —developed in Python.
+The code in this repository was originally developed to support the data collection and analyses presented in the paper: **Zhang, X. (2023). Diffusion Dynamics and Digital Movement: the Emergence and Proliferation of the German-speaking #FridaysForFuture Network on Twitter. *Social Movement Studies*. [https://doi.org/10.1177/14614448251336418](https://doi.org/10.1080/14742837.2023.2211015)**
 
-**Revision Data Collection**
 
-data_fetch_revisions.py: Downloads and structures page revision histories.
+**Data Preparation & Loading**
 
-**Sentence-Level Diff Parsing**
+load_data.py: Handles importing and initial preprocessing of raw Twitter or cascade datasets.
 
-data_sentencediff_parser.py: Extracts sentence-level differences between revisions.
+**Cascade Modeling & Metrics**
 
-**Sequence Modeling**
+cascade_builder.py: Constructs cascade structures from social interaction logs.
 
-sequence_modeling.py: Models edit progression using structured sequence data.
+cascade_network_metric.py: Computes network-level metrics for diffusion cascades.
 
-**Content Embedding (BERT-based)**
+cascade_analysis.py: Performs in-depth analysis of cascade behavior.
 
-content_finetune_bert.py: Fine-tunes BERT on revision content.
+centrality_sliding.py: Tracks changes in centrality over time using sliding windows.
 
-content_apply_bert.py: Applies the fine-tuned model for downstream tasks.
+time_series_analysis.py: Analyzes temporal dynamics within cascades.
 
-**Statistical & Meta Analysis (R)**
+**Embedding & Clustering**
 
-frailty_model.R and meta_analysis.R: Perform survival and meta-analysis on revision-based features.
+embedding_clustering.py: Applies embeddings (e.g., user or content-level) and clustering techniques for cascade segmentation.
 
-**User and Link Insights**
+**Topic & Content Analysis**
 
-user_wiki_rights.py: Analyzes user rights and editorial roles.
+topic_model.py: Extracts thematic patterns from cascade content via topic modeling.
 
-wikilink_score_calculation.py: Scores internal wiki link structures.
+**Pipeline Entry Point**
 
+main.py: Orchestrates overall analysis, allowing streamlined execution of loading, modeling, and analysis workflows.
